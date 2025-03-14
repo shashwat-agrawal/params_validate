@@ -129,9 +129,9 @@ def validate_with(**args):
             ret_params[param] = _validate_param_with_spec(param, params[param], spec[param])
         else:
             if type(params[param]) in [list, dict]:
-                ret_params[params] = copy.deepcopy(params[param])
+                ret_params[param] = copy.deepcopy(params[param])
             else:
-                ret_params[params] = params[param]
+                ret_params[param] = params[param]
 
     for param in spec:
         if param not in ret_params and 'default' in spec[param]:
